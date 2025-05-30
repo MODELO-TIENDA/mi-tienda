@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mi Tienda</title>
+  <title>Contacto</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -17,32 +17,24 @@
   </header>
 
   <main>
-    <section class="hero">
-      <h2>Bienvenido a nuestra tienda online</h2>
-      <p>Próximamente: nuevos productos </p>
-    </section>
-
-    <section class="productos">
-      <h3>Productos destacados</h3>
-      <div class="grid">
-        <div class="producto">
-          <img src="https://basketworld.com/27445-large_default/lebron-james-los-angeles-lakers-statement-edition-swingman-jersey-23-24-junior.jpg" alt="Producto 1">
-          <h4>Producto 1</h4>
-          <p>€9.99</p>
-          <button>Comprar</button>
+    <section class="formulario-contacto">
+      <h2>Contacto</h2>
+      <form action="https://formspree.io/f/mjkrbgnj" method="POST">
+        <div class="campo">
+          <input type="text" name="nombre" placeholder="Nombre" required />
+          <input type="email" name="email" placeholder="Correo electrónico *" required />
         </div>
-        <div class="producto">
-          <img src="https://www.motosukracing.com/wp-content/uploads/2022/02/CASCO-AIROH-STRYKER-KTM-725x725.jpg" alt="Producto 2">
-          <h4>Producto 2</h4>
-          <p>€14.99</p>
-          <button>Comprar</button>
-        </div>
-      </div>
+        <input type="tel" name="telefono" placeholder="Número de teléfono" />
+        <textarea name="comentario" placeholder="Comentario" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <p class="mensaje-extra">Contáctanos a este correo: <strong>rrobces1806@g.educaand.es</strong></p>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Mi Tiendaa Fuego - Todos los derechos reservados</p>
+    <p>© 2025 Mi Tienda Fuego - Todos los derechos reservados</p>
   </footer>
 </body>
 </html>
+
