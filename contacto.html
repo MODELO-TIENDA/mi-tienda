@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contacto</title>
   <link rel="stylesheet" href="style.css" />
@@ -17,19 +17,15 @@
   </header>
 
   <main>
-    <section class="formulario-contacto">
-      <h2>Contacto</h2>
-      <form action="https://formspree.io/f/mjkrbgnj" method="POST">
-        <div class="campo">
-          <input type="text" name="nombre" placeholder="Nombre" required />
-          <input type="email" name="email" placeholder="Correo electrónico *" required />
-        </div>
-        <input type="tel" name="telefono" placeholder="Número de teléfono" />
-        <textarea name="comentario" placeholder="Comentario" required></textarea>
-        <button type="submit">Enviar</button>
-      </form>
-      <p class="mensaje-extra">Contáctanos a este correo: <strong>rrobces1806@g.educaand.es</strong></p>
-    </section>
+    <h2>Contacto</h2>
+    <form action="https://formspree.io/f/mjkrbgnj" method="POST" class="formulario">
+      <input type="text" name="nombre" placeholder="Nombre" required>
+      <input type="email" name="email" placeholder="Correo electrónico *" required>
+      <input type="tel" name="telefono" placeholder="Número de teléfono">
+      <textarea name="comentario" placeholder="Comentario"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <p style="text-align:center;">Contáctanos a este correo: <strong>rrobces1806@g.educaand.es</strong></p>
   </main>
 
   <footer>
@@ -37,4 +33,3 @@
   </footer>
 </body>
 </html>
-
