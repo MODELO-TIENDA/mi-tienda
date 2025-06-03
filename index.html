@@ -1,31 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Catálogo de Productos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio</title>
   <link rel="stylesheet" href="style.css" />
-  <script>
-    function buscarProducto() {
-      const input = document.getElementById('buscador').value.toLowerCase();
-      const productos = document.querySelectorAll('.producto');
-      let algunoVisible = false;
-
-      productos.forEach(producto => {
-        const nombre = producto.querySelector('h4').textContent.toLowerCase();
-        if (nombre.includes(input)) {
-          producto.style.display = 'block';
-          algunoVisible = true;
-        } else {
-          producto.style.display = 'none';
-        }
-      });
-
-      if (!algunoVisible) {
-        alert("Producto no encontrado");
-      }
-    }
-  </script>
 </head>
 <body>
   <header>
@@ -36,31 +15,40 @@
       <a href="contacto.html">Contacto</a>
     </nav>
     <div style="margin-top: 1rem;">
-      <input type="text" id="buscador" placeholder="Buscar productos...">
-      <button onclick="buscarProducto()">Buscar</button>
+      <form action="productos.html" method="get" style="display: inline;">
+        <input type="text" id="buscador" name="buscar" placeholder="Buscar productos...">
+        <button type="submit">Buscar</button>
+      </form>
     </div>
   </header>
 
-  <main class="productos">
-    <h3>Catálogo de productos</h3>
-    <div class="grid">
-      <div class="producto" id="producto1">
-        <img src="https://basketworld.com/27445-large_default/lebron-james-los-angeles-lakers-statement-edition-swingman-jersey-23-24-junior.jpg" alt="Camiseta Lakers">
-        <h4>Camiseta Lakers</h4>
-        <p>€9.99</p>
-        <a href="https://wa.me/34673548521?text=Hola%20buenas,%20me%20gustaría%20obtener%20información%20sobre%20la%20camiseta%20de%20Lakers%20de%20vuestra%20tienda%20online" target="_blank">
-          <button>Comprar</button>
-        </a>
+  <main>
+    <section class="hero">
+      <h2>Bienvenido a nuestra tienda online</h2>
+      <p>Próximamente: nuevos productos </p>
+    </section>
+
+    <section class="productos">
+      <h3>Productos destacados</h3>
+      <div class="grid">
+        <div class="producto">
+          <img src="https://basketworld.com/27445-large_default/lebron-james-los-angeles-lakers-statement-edition-swingman-jersey-23-24-junior.jpg" alt="Camiseta Lakers">
+          <h4>Camiseta Lakers</h4>
+          <p>€9.99</p>
+          <a href="https://wa.me/34673548521?text=Hola%20buenas,%20me%20gustaría%20obtener%20información%20sobre%20la%20camiseta%20de%20Lakers%20de%20vuestra%20tienda%20online" target="_blank">
+            <button>Comprar</button>
+          </a>
+        </div>
+        <div class="producto">
+          <img src="https://www.motosukracing.com/wp-content/uploads/2022/02/CASCO-AIROH-STRYKER-KTM-725x725.jpg" alt="Casco para moto">
+          <h4>Casco para moto</h4>
+          <p>€14.99</p>
+          <a href="https://wa.me/34673548521?text=Hola%20buenas,%20me%20gustaría%20obtener%20información%20sobre%20el%20casco%20para%20moto%20de%20vuestra%20tienda%20online" target="_blank">
+            <button>Comprar</button>
+          </a>
+        </div>
       </div>
-      <div class="producto" id="producto2">
-        <img src="https://www.motosukracing.com/wp-content/uploads/2022/02/CASCO-AIROH-STRYKER-KTM-725x725.jpg" alt="Casco para moto">
-        <h4>Casco para moto</h4>
-        <p>€14.99</p>
-        <a href="https://wa.me/34673548521?text=Hola%20buenas,%20me%20gustaría%20obtener%20información%20sobre%20el%20casco%20para%20moto%20de%20vuestra%20tienda%20online" target="_blank">
-          <button>Comprar</button>
-        </a>
-      </div>
-    </div>
+    </section>
   </main>
 
   <footer>
