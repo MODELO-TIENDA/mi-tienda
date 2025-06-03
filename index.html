@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Inicio</title>
   <link rel="stylesheet" href="style.css" />
+  <script>
+    function buscarProducto() {
+      const input = document.getElementById('buscador').value.toLowerCase();
+      if (input.includes("lakers") || input.includes("camiseta")) {
+        window.location.href = "productos.html#producto1";
+      } else if (input.includes("casco")) {
+        window.location.href = "productos.html#producto2";
+      } else {
+        alert("Producto no encontrado");
+      }
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -20,6 +32,8 @@
     <section class="hero">
       <h2>Bienvenido a nuestra tienda online</h2>
       <p>Próximamente: nuevos productos </p>
+      <input type="text" id="buscador" placeholder="Buscar productos...">
+      <button onclick="buscarProducto()">Buscar</button>
     </section>
 
     <section class="productos">
@@ -50,3 +64,4 @@
   </footer>
 </body>
 </html>
+
