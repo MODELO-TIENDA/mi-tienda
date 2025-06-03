@@ -1,31 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catálogo de Productos</title>
   <link rel="stylesheet" href="style.css" />
-  <script>
-    function buscarProducto() {
-      const input = document.getElementById('buscador').value.toLowerCase();
-      const productos = document.querySelectorAll('.producto');
-      let algunoVisible = false;
-
-      productos.forEach(producto => {
-        const nombre = producto.querySelector('h4').textContent.toLowerCase();
-        if (nombre.includes(input)) {
-          producto.style.display = 'block';
-          algunoVisible = true;
-        } else {
-          producto.style.display = 'none';
-        }
-      });
-
-      if (!algunoVisible) {
-        alert("Producto no encontrado");
-      }
-    }
-  </script>
 </head>
 <body>
   <header>
@@ -35,14 +14,18 @@
       <a href="productos.html">Productos</a>
       <a href="contacto.html">Contacto</a>
     </nav>
+    <div style="margin-top: 1rem;">
+      <form action="productos.html" method="get" style="display: inline;">
+        <input type="text" id="buscador" name="buscar" placeholder="Buscar productos...">
+        <button type="submit">Buscar</button>
+      </form>
+    </div>
   </header>
 
   <main class="productos">
     <h3>Catálogo de productos</h3>
-    <input type="text" id="buscador" placeholder="Buscar productos...">
-    <button onclick="buscarProducto()">Buscar</button>
     <div class="grid">
-      <div class="producto" id="producto1">
+      <div class="producto">
         <img src="https://basketworld.com/27445-large_default/lebron-james-los-angeles-lakers-statement-edition-swingman-jersey-23-24-junior.jpg" alt="Camiseta Lakers">
         <h4>Camiseta Lakers</h4>
         <p>€9.99</p>
@@ -50,7 +33,7 @@
           <button>Comprar</button>
         </a>
       </div>
-      <div class="producto" id="producto2">
+      <div class="producto">
         <img src="https://www.motosukracing.com/wp-content/uploads/2022/02/CASCO-AIROH-STRYKER-KTM-725x725.jpg" alt="Casco para moto">
         <h4>Casco para moto</h4>
         <p>€14.99</p>
@@ -64,5 +47,31 @@
   <footer>
     <p>© 2025 Mi Tienda Fuego - Todos los derechos reservados</p>
   </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get("buscar");
+    if (query) {
+      const productos = document.querySelectorAll(".producto");
+      let algunoVisible = false;
+      productos.forEach(producto => {
+        const nombre = producto.querySelector("h4").textContent.toLowerCase();
+        if (nombre.includes(query.toLowerCase())) {
+          producto.style.display = "block";
+          algunoVisible = true;
+        } else {
+          producto.style.display = "none";
+        }
+      });
+
+      if (!algunoVisible) {
+        const mensaje = document.createElement("p");
+        mensaje.textContent = `No se encontraron productos que coincidan con "${query}".`;
+        mensaje.style.marginTop = "1rem";
+        mensaje.style.textAlign = "center";
+        document.querySelector(".productos").appendChild(mensaje);
+      }
+    }
+  </script>
 </body>
 </html>
